@@ -14,10 +14,10 @@ class Browser:
         self.driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
         self.driver.maximize_window()
 
-    def navigate_to_permits(self):
+    def navigate_to_permits(self) -> PermitLanding:
         self.driver.get(self.config.permit.url)
         if self.config.permit.welcome_page:
             return PermitLanding(self.driver)
 
-    def close(self):
+    def close(self) -> None:
         self.driver.close()
