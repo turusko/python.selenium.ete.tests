@@ -33,10 +33,7 @@ class PermitVehicle:
     def __enter_vrm(self, vrm: str) -> None:
         WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".VrmBox"))).send_keys(vrm)
 
-
     def __click_find_vehicle(self) -> None:
         element = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable((By.XPATH, '//button[text()="Find vehicle"]')))
         element.click()
-
-
