@@ -21,7 +21,7 @@ class Permits(unittest.TestCase):
         self.assertTrue(data[2].text.__contains__('BLACK'))
         charge_page = vehicle_lookup_page.confirm_vehicle()
         self.assertEqual(charge_page.get_charge(), 10)
-        charge_page.click_select_travel_dates()
+        schedule_page = charge_page.click_select_travel_dates()
 
 
 

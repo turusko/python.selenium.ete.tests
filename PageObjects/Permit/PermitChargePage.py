@@ -18,7 +18,7 @@ class PermitCharge:
             if i.text.__contains__("Standard charge per day"):
                 pre_text, value = i.text.split("£")
                 return float(value)
-        raise Exception("Unable to find charge for permit on charge page")
+        raise KeyError("Unable to find charge for permit on charge page")
     
     def click_select_travel_dates(self) -> PermitSchedule:
         WebDriverWait(self.driver, 60)\
