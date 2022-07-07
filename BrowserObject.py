@@ -4,6 +4,7 @@ from AppSettings import get_application_settings
 from PageObjects.Permit.PermitLandingPage import PermitLanding
 from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.edge.options import Options
 
 
 class Browser:
@@ -11,7 +12,9 @@ class Browser:
     config = get_application_settings()
 
     def __init__(self):
-        self.driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+        options = Options()
+        options.headless = self.config.headless
+        self.driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
         self.driver.maximize_window()
 
     def navigate_to_permits(self) -> PermitLanding:

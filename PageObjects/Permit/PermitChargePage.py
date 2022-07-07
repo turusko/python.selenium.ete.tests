@@ -3,9 +3,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webelement import WebElement
-from typing import List
-
+from PageObjects.Permit.PermitSchedulePage import PermitSchedule
 
 class PermitCharge:
     driver: WebDriver
@@ -21,3 +19,12 @@ class PermitCharge:
                 pre_text, value = i.text.split("£")
                 return float(value)
         raise Exception("Unable to find charge for permit on charge page")
+    
+    def click_select_travel_dates(self) -> PermitSchedule:
+        WebDriverWait(self.driver, 60)\
+            .until(EC\
+                .presence_of_element_located(
+                    (By.XPATH, '//button[text()="Select your travel dates"]')
+                    )
+                )
+        return PermitSchedule(self.driver)
