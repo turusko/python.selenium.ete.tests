@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from typing import List
+from PageObjects.Permit.PermitChargePage import PermitCharge
 
 
 class PermitVehicle:
@@ -20,19 +21,22 @@ class PermitVehicle:
         self.__wait_for_progress_button()
         return self.driver.find_elements(By.CSS_SELECTOR, ".VehcileDetailine")
 
-    def confirm_vehicle(self):
-        self.driver.find_element(By.XPATH, '//button[text()="Continue"]').click()
-        return
+    def confirm_vehicle(self) -> PermitCharge:
+        element = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable((By.XPATH, '//button[text()="Continue"]')))
+        element.click()
+        return PermitCharge(self.driver)
 
-    def __wait_for_progress_button(self) -> PermitVehicle:
+    def __wait_for_progress_button(self) -> None:
         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.XPATH, '//button[text()="Continue"]')))
-        return self
 
-    def __enter_vrm(self, vrm: str) -> PermitVehicle:
-        self.driver.find_element(By.CSS_SELECTOR, ".VrmBox").send_keys(vrm)
-        return self
+    def __enter_vrm(self, vrm: str) -> None:
+        WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".VrmBox"))).send_keys(vrm)
 
-    def __click_find_vehicle(self) -> PermitVehicle:
-        self.driver.find_element(By.XPATH, '//button[text()="Find vehicle"]').click()
+
+    def __click_find_vehicle(self) -> None:
+        element = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable((By.XPATH, '//button[text()="Find vehicle"]')))
+        element.click()
 
 
