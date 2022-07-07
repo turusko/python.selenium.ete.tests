@@ -14,18 +14,16 @@ class Permits(unittest.TestCase):
     def test_vehicle_can_be_looked_up(self) -> None:
         permits = self.browser.navigate_to_permits()
         self.assertTrue(permits.is_page_tile_displayed(), "Permits webpage did not start up")
-        data = permits.click_next().lookup_vrm("t2omf")
+        vehicle_lookup_page = permits.click_next()
+        data = vehicle_lookup_page.lookup_vrm("t2omf")
         self.assertTrue(data[0].text.__contains__('T2OMF'))
         self.assertTrue(data[1].text.__contains__('JAGUAR'))
         self.assertTrue(data[2].text.__contains__('BLACK'))
+        charge_page = vehicle_lookup_page.confirm_vehicle()
+        self.assertEqual(charge_page.get_charge(), 10)
 
-    def test_vehicle_can_be_looked_up_two(self) -> None:
-        permits = self.browser.navigate_to_permits()
-        self.assertTrue(permits.is_page_tile_displayed(), "Permits webpage did not start up")
-        data = permits.click_next().lookup_vrm("t2omf")
-        self.assertTrue(data[0].text.__contains__('T2OMF'))
-        self.assertTrue(data[1].text.__contains__('JAGUAR'))
-        self.assertTrue(data[2].text.__contains__('BLACK'))
+
+
 
 
 
