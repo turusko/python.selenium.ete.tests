@@ -14,7 +14,7 @@ Current test complete automation is created via test cases testing functions at 
 
 We can and will intergrate this with test complete, we however would use a different pipeline as this world be classed more as a smoke test than a regression test
 
-## How sould my app setting json look?
+## How should my app setting json look?
 
 ```json
 {
