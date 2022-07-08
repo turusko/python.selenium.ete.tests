@@ -19,9 +19,20 @@ We can and will intergrate this with test complete, we however would use a diffe
 ```json
 {
     "permit": {
-        "url" : "",
-        "welcome_page" : true
+        "url": "",
+        "welcome_page": true
     },
-    "headless": false
+    "headless": true,
+    "test_card": {
+        "card_number": "",
+        "expiry_month": "",
+        "expiry_year": "",
+        "security_code": ""
+    },
+    "vehicle_details":{
+        "vrm": "",
+        "make": "",
+        "colour": ""
+    }
 }
 ```

@@ -26,5 +26,5 @@ class PermitCharge:
                 .presence_of_element_located(
                     (By.XPATH, '//button[text()="Select your travel dates"]')
                     )
-                )
+                ).click()
         return PermitSchedule(self.driver)

@@ -11,6 +11,9 @@ class PermitLanding:
     def __init__(self, driver) -> None:
         super().__init__()
         self.driver = driver
+        WebDriverWait(self.driver, 30).until(
+            EC.text_to_be_present_in_element(
+                (By.CSS_SELECTOR, ".Title"), "Zero Emission Zone (ZEZ)"))
 
     def is_page_tile_displayed(self):
         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".Title")))
