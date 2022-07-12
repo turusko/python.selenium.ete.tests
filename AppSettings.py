@@ -39,5 +39,3 @@ def get_application_settings() -> AppSettings:
 
     return AppSettings.from_json(file)
 
-
-print(get_application_settings())

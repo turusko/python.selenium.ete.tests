@@ -16,8 +16,8 @@ class PermitCharge:
         text_list = self.driver.find_elements(By.TAG_NAME, "p")
         for i in text_list:
             if i.text.__contains__("Standard charge per day"):
-                pre_text, value = i.text.split("£")
-                return float(value)
+                output = i.text.split("£")
+                return float(output[1])
         raise KeyError("Unable to find charge for permit on charge page")
     
     def click_select_travel_dates(self) -> PermitSchedule:
