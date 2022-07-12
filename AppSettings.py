@@ -34,7 +34,7 @@ class AppSettings:
 
 
 def get_application_settings() -> AppSettings:
-    with open("AppSettings.json", "r") as open_file:
+    with open("c:\AppSettings.json", "r") as open_file:
         file = open_file.read()
 
     return AppSettings.from_json(file)
