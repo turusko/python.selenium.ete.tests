@@ -27,6 +27,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Execute Unit tests
-        run: python -m unittest discover -s \tests -p test_* -t . 
+        run: python -m unittest discover -s tests -p test_* -t . 
 
 
