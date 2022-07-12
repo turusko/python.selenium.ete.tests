@@ -15,7 +15,7 @@ class PermitLanding:
             EC.text_to_be_present_in_element(
                 (By.CSS_SELECTOR, ".Title"), "Zero Emission Zone (ZEZ)"))
 
-    def is_page_tile_displayed(self):
+    def is_page_tile_displayed(self) -> bool:
         WebDriverWait(self.driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".Title")))
         return self.driver.find_element(By.CSS_SELECTOR, ".Title").text == "Zero Emission Zone (ZEZ)"
 
