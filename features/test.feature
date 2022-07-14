@@ -7,7 +7,7 @@ Feature: User is able to lookup VRM
              Then vehicle colour is displayed as <colour>
               And vehicle make is displayed as <make>
 
-        Examples: Amphibians
+        Examples: vehicles
                   | vrm   | colour | make   |
                   | t2omf | black  | jaguar |
                   | taw1  | silver | mini   |
