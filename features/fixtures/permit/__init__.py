@@ -1,1 +1,1 @@
-from .VrmLookupFixture import vrm_lookup
+from .vrm_lookup_fixture import vrm_lookup

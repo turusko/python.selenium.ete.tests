@@ -1,4 +1,4 @@
-from behave import *
+from behave import when, then
 from pageObjects import PermitVehicle
 from selenium.webdriver.remote.webelement import WebElement
 
