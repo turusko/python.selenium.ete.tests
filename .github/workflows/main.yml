@@ -32,4 +32,8 @@ jobs:
           venv\Scripts\activate
           pip install -r requirements.txt
           behave --junit
+        
+        - name: JUnit Report Action
+          uses: mikepenz/action-junit-report@v3.1.0
+
 
