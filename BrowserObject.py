@@ -14,6 +14,7 @@ class Browser:
     def __init__(self):
         options = Options()
         options.headless = self.config.headless
+        options.add_experimental_option("excludeSwitches", ["enable-logging"])
         self.driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
         self.driver.maximize_window()
 
