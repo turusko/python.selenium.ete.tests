@@ -9,12 +9,6 @@ class PermitSettings:
     welcome_page: bool
 
 @dataclass
-class VehicleDetails:
-    vrm: str
-    colour: str
-    make: str
-
-@dataclass
 class TestCardDetails:
     card_number: str
     expiry_month: str
@@ -27,7 +21,6 @@ class AppSettings:
     test_card: TestCardDetails
     permit: PermitSettings
     headless: bool
-    vehicle_details: VehicleDetails
 
 
 

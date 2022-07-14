@@ -1,20 +1,14 @@
 # Readme
 
-This is currently a MS Edge selenium test package for user workflow through the KVL application
+This is an MS Edge selenium test package for user workflow through the KVL application. We have added BDD testing using the package behave, allowing us to make tests from gherkin feature files. 
 
 ## What is currently being worked on?
 
-We are currently working on permits application adding end to end tests for the permits app
+Looking at converting test complete tests for the permit application into gherkin.
 
-## How is this different from existing automation?
-
-Current test complete automation is created via test cases testing functions at a lower level where this tests application at a End to End level
-
-## Will this work with test complete?
-
-We can and will integrate this with test complete, we however would use a different pipeline as this world be classed more as a smoke test than a regression test
 
 ## How should my app setting json look?
+Reminder the app setting file should be in the c:\ drive. This is used for CI to ensure confidential information is not shared.
 
 ```json
 {
@@ -28,11 +22,16 @@ We can and will integrate this with test complete, we however would use a differ
         "expiry_month": "",
         "expiry_year": "",
         "security_code": ""
-    },
-    "vehicle_details":{
-        "vrm": "",
-        "make": "",
-        "colour": ""
     }
 }
+```
+
+## how do i run the tests localy?
+Ensure you have the latest version of python installed
+in a command console run the following: 
+```
+    python -m venv venv
+    venv\Scripts\activate
+    pip install -r requirements.txt
+    behave
 ```
