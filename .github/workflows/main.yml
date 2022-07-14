@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Execute Unit tests
-        run: 
+        run: |
         python -m venv venv
         venv\Scripts\activate
         pip isntall -r requirements.txt
