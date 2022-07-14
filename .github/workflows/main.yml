@@ -15,14 +15,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  
   Run:
-    # The type of runner that the job will run on
+   
     runs-on: [self-hosted]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
       - uses: actions/checkout@v3
 
       - name: Setup Enviroment
@@ -31,13 +30,15 @@ jobs:
           venv\Scripts\activate
           pip install -r requirements.txt
 
-      # Runs a single command using the runners shell
+      
       - name: Execute Unit tests
-        run: behave --junit
+        run: |
+          venv\Scripts\activate
+          behave --junit
           
       - name: JUnit Report Action
         uses: mikepenz/action-junit-report@v3.1.0
-        if: always() # always run even if the previous step fails
+        if: always() 
         with:
           report_paths: '**/reports/*.xml'
 
