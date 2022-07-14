@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
 from AppSettings import get_application_settings
-from PageObjects.Permit.PermitLandingPage import PermitLanding
+from pageObjects import PermitLanding
 from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.edge.options import Options

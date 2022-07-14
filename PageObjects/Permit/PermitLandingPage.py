@@ -2,7 +2,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from PageObjects.Permit.PermitVehiclePage import PermitVehicle
+from .PermitVehiclePage import PermitVehicle
 
 
 class PermitLanding:

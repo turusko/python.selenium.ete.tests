@@ -1,5 +1,5 @@
 from behave import *
-from PageObjects.Permit.PermitVehiclePage import PermitVehicle
+from pageObjects import PermitVehicle
 from selenium.webdriver.remote.webelement import WebElement
 
 

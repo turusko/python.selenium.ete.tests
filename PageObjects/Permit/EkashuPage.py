@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from AppSettings import get_application_settings
-from PageObjects.Permit.PermitCompletedPage import PermitCompleted
+from .PermitCompletedPage import PermitCompleted
 
 class Ekashu: 
     driver: WebDriver

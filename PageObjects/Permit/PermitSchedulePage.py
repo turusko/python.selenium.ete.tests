@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
-from PageObjects.Permit.PermitCheckoutPage import PermitCheckout
+from .PermitCheckoutPage import PermitCheckout
 
 class PermitSchedule:
     driver: WebDriver

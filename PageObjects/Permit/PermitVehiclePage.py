@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from typing import List
-from PageObjects.Permit.PermitChargePage import PermitCharge
+from .PermitChargePage import PermitCharge
 
 
 class PermitVehicle:
