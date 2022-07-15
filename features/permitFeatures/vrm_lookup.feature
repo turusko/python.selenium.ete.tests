@@ -2,7 +2,7 @@
 Feature: User is able to lookup VRM
 
         @fixture.vrm.lookup
-        Scenario Outline: Adding numbers
+        Scenario Outline: Vehicle lookup returns correct make and colour
              When user looksup <vrm>
              Then vehicle colour is displayed as <colour>
               And vehicle make is displayed as <make>
